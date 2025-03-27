@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Songs</title>
+</head>
+<body>
+<h1>Le migliori Canzoni</h1>
+<div>
+    <ul>
+        <li th:each ="song : ${song}">
+            <span th:text = "${song.id} + ' - ' + ${song.title}"></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

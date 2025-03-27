@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Movie</title>
+</head>
+<body>
+    <h1>I migliori film</h1>
+<div>
+    <ul>
+        <li th:each ="film : ${film}">
+            <span th:text = "${film.id} + ' - ' + ${film.title}"></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
