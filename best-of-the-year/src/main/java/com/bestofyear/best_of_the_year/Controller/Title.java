@@ -66,6 +66,20 @@ public class Title {
                 break;
             }
         }
-        return "searchID";
+        return "searchIDFilm";
+    }
+
+    @GetMapping("/songs/{id}")
+    public String SongID(@PathVariable("id") int id, Model model){
+        List<Songs> song = getBestSongs();
+        Songs trovato = null;
+        for (Songs s : song){
+            if (s.getId() == id){
+                model.addAttribute("song", s);
+                trovato = s;
+                break;
+            }
+        }
+        return "searchIDSongs";
     }
 }
