@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SearchIDFilm</title>
+</head>
+<body>
+<h1>Ricerca Film</h1>
+<div th:if = "${film != null}">
+    <p th:text="'Film ricercato: ' + ${film.title}"></p>
+</div>
+<div th:if = "${film == null}">
+    <p th:text="'Non esiste'"></p>
+</div>
+</body>
+</html>
