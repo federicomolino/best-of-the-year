@@ -1,8 +1,7 @@
 package com.bestofyear.best_of_the_year.Controller;
 
-import com.bestofyear.best_of_the_year.entities.Movie;
-import com.bestofyear.best_of_the_year.entities.Songs;
-import org.springframework.stereotype.Controller;
+import com.bestofyear.best_of_the_year.Entities.Movie;
+import com.bestofyear.best_of_the_year.Entities.Songs;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 import java.util.List;
 
-@Controller
+@org.springframework.stereotype.Controller
 @RequestMapping("/")
-public class Title {
+public class Controller {
     @GetMapping("/title")
     public String titolo(@RequestParam(name = "titolo") String titolo,
                            Model model) {
