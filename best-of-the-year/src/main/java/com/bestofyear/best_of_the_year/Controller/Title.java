@@ -58,11 +58,9 @@ public class Title {
     @GetMapping("/movies/{id}")
     public String MovieID(@PathVariable("id") int id, Model model){
         List<Movie> films = getBestMovies();
-        Movie trovato = null;
         for (Movie f : films){
             if (f.getId() == id){
                 model.addAttribute("film", f);
-                trovato = f;
                 break;
             }
         }
@@ -72,11 +70,9 @@ public class Title {
     @GetMapping("/songs/{id}")
     public String SongID(@PathVariable("id") int id, Model model){
         List<Songs> song = getBestSongs();
-        Songs trovato = null;
         for (Songs s : song){
             if (s.getId() == id){
                 model.addAttribute("song", s);
-                trovato = s;
                 break;
             }
         }
