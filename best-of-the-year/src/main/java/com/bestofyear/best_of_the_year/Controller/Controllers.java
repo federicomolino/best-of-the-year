@@ -2,6 +2,7 @@ package com.bestofyear.best_of_the_year.Controller;
 
 import com.bestofyear.best_of_the_year.Entities.Movie;
 import com.bestofyear.best_of_the_year.Entities.Songs;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 import java.util.List;
 
-@org.springframework.stereotype.Controller
+@Controller
 @RequestMapping("/")
-public class Controller {
+public class Controllers {
     @GetMapping("/title")
     public String titolo(@RequestParam(name = "titolo") String titolo,
                            Model model) {
@@ -48,7 +49,9 @@ public class Controller {
 
     @GetMapping("/songs")
     public String bestSongs(Model model) {
-        List<Songs> songs = getBestSongs();
+        List<Songs
+
+                > songs = getBestSongs();
         model.addAttribute("song", songs);
         return "song";
     }
@@ -66,8 +69,20 @@ public class Controller {
         return "searchIDFilm";
     }
 
-    @GetMapping("/songs/{id}")
-    public String SongID(@PathVariable("id") int id, Model model){
+//    @GetMapping("/songs/{id}")
+//    public String SongID(@PathVariable("id") int id, Model model){
+//        List<Songs> song = getBestSongs();
+//        for (Songs s : song){
+//            if (s.getId() == id){
+//                model.addAttribute("song", s);
+//                break;
+//            }
+//        }
+//        return "searchIDSongs";
+//    }
+
+    @GetMapping("/songIDID")
+    public String SongIDD(@RequestParam(name = "id") int id, Model model){
         List<Songs> song = getBestSongs();
         for (Songs s : song){
             if (s.getId() == id){
